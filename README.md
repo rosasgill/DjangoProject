@@ -62,9 +62,9 @@ http://127.0.0.1:8000/
 
 ## Equipe
 
-- **Nome da equipe**: ______________________
-- **Tech Leader**: ______________________
-- **Dev1**: ______________________
-- **Dev2**: ______________________
-- **Dev3**: ______________________
+- **Nome da equipe**: Softlink
+- **Tech Leader**: Gillane Rosas
+- **Dev1**: Antônio Gabriel
+- **Dev2**: Emilly Paixão
+- **Dev3**: Márcio Jean
 
