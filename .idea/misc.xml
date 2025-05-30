@@ -1,7 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="Black">
+<<<<<<< HEAD
+    <option name="sdkName" value="Python 3.12 (DjangoProject)" />
+  </component>
+  <component name="ProjectRootManager" version="2" project-jdk-name="Python 3.12 (DjangoProject)" project-jdk-type="Python SDK" />
+=======
     <option name="sdkName" value="Python 3.6 (DjangoProject)" />
   </component>
   <component name="ProjectRootManager" version="2" project-jdk-name="Python 3.13 virtualenv at C:\Users\gabri\Documents\DjangoProject\.venv" project-jdk-type="Python SDK" />
+>>>>>>> 6a08057352a25925bd83286769b747a85be1d215
 </project>

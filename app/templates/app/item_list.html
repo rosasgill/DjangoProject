@@ -1,3 +1,15 @@
 <h1>Items</h1><ul>{% for item in items %}<li>{{ item.name }} - <a href="{% url 'item_update' item.pk %}">Edit</a> - <a href="{% url 'item_delete' item.pk %}">Delete</a></li>{% endfor %}</ul><a href="{% url 'item_create' %}">New Item</a>
+<h1>Publicado</h1>
+<ul>
+    {% for publicado in publicados %}
+        <li>{{ publicado.date }} -
+            <a href="{% url 'publicado_update' publicado.pk %}">Edit</a> -
+            <a href="{% url 'publicado_delete' publicado.pk %}">Delete</a>
+        </li>
+    {% endfor %}
+</ul>
+<a href="{% url 'publicado_create' %}">New Publicado</a>
+
 <h1>Author</h1><ul>{% for author in authors %}<li>{{ author.name }} - <a href="{% url 'author_update' author.pk %}">Edit</a> - <a href="{% url 'author_delete' author.pk %}">Delete</a></li>{% endfor %}</ul><a href="{% url 'author_create' %}">New Author</a>
 <h1>Category</h1><ul>{% for category in categorys %}<li>{{ category.name }} - <a href="{% url 'category_update' category.pk %}">Edit</a> - <a href="{% url 'category_delete' category.pk %}">Delete</a></li>{% endfor %}</ul><a href="{% url 'category_create' %}">New Category</a>
+

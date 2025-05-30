@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <module type="PYTHON_MODULE" version="4">
+<<<<<<< HEAD
+=======
   <component name="FacetManager">
     <facet type="django" name="Django">
       <configuration>
@@ -12,10 +14,15 @@
       </configuration>
     </facet>
   </component>
+>>>>>>> 6a08057352a25925bd83286769b747a85be1d215
   <component name="NewModuleRootManager">
     <content url="file://$MODULE_DIR$">
       <excludeFolder url="file://$MODULE_DIR$/.venv" />
     </content>
+<<<<<<< HEAD
+    <orderEntry type="jdk" jdkName="Python 3.12 (DjangoProject)" jdkType="Python SDK" />
+    <orderEntry type="sourceFolder" forTests="false" />
+=======
     <orderEntry type="jdk" jdkName="Python 3.13 virtualenv at C:\Users\gabri\Documents\DjangoProject\.venv" jdkType="Python SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" name="Django Lib" level="project" />
@@ -27,5 +34,6 @@
         <option value="$MODULE_DIR$/app/templates" />
       </list>
     </option>
+>>>>>>> 6a08057352a25925bd83286769b747a85be1d215
   </component>
 </module>
