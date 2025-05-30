@@ -6,4 +6,13 @@ urlpatterns = [
     path('new/', views.item_create, name='item_create'),
     path('edit/<int:pk>/', views.item_update, name='item_update'),
     path('delete/<int:pk>/', views.item_delete, name='item_delete'),
+    path('authors/', views.author_list, name='author_list'),
+    path('authors/create/', views.author_create, name='author_create'),
+    path('authors/<int:pk>/edit/', views.author_update, name='author_update'),
+    path('authors/<int:pk>/delete/', views.author_delete, name='author_delete'),
+    path('', views.category_list, name='category_list'),
+    path('new/', views.category_create, name='category_create'),
+    path('edit/<int:pk>/', views.category_update, name='category_update'),
+    path('delete/<int:pk>/', views.category_delete, name='category_delete'),
+
 ]
