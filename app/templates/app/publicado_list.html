@@ -1,0 +1,10 @@
+<h1>Publicado</h1>
+<ul>
+    {% for publicado in publicados %}
+        <li>{{ publicado.date }} -
+            <a href="{% url 'publicado_update' publicado.pk %}">Edit</a> -
+            <a href="{% url 'publicado_delete' publicado.pk %}">Delete</a>
+        </li>
+    {% endfor %}
+</ul>
+<a href="{% url 'publicado_create' %}">New Publicado</a>

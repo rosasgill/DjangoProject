@@ -1,8 +1,7 @@
-from django.shortcuts import render, redirect
-from .models import Item, Author
-from .forms import ItemForm, AuthorForm
-from .models import Item, Category
-from .forms import ItemForm, CategoryForm
+from django.shortcuts import render, redirect, get_object_or_404
+from .models import Item, Author, Category, Publicado
+from .forms import ItemForm, AuthorForm, CategoryForm, PublicadoForm
+
 
 def item_list(request):
     items = Item.objects.all()
@@ -36,6 +35,40 @@ def item_delete(request, pk):
         return redirect('item_list')
     return render(request, 'app/item_confirm_delete.html', {'item': item})
 
+
+def publicado_list(request):
+    publicados = Publicado.objects.all()
+    return render(request, 'app/publicado_list.html', {'publicados': publicados})
+
+def publicado_create(request):
+    if request.method == 'POST':
+        form = PublicadoForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('publicado_list')
+    else:
+        form = PublicadoForm()
+    return render(request, 'app/publicado_form.html', {'form': form})
+
+
+def publicado_update(request, pk):
+    publicado = get_object_or_404(Publicado, pk=pk)
+    if request.method == 'POST':
+        form = PublicadoForm(request.POST, instance=publicado)
+        if form.is_valid():
+            form.save()
+            return redirect('publicado_list')
+    else:
+        form = PublicadoForm(instance=publicado)
+    return render(request, 'app/publicado_form.html', {'form': form})
+
+def publicado_delete(request, pk):
+    publicado = get_object_or_404(Publicado, pk=pk)
+    if request.method == 'POST':
+        publicado.delete()
+        return redirect('publicado_list')
+    return render(request, 'app/publicado_confirm.html', {'publicado': publicado})
+
 # Antonio Gabriel
 def author_list(request):
     authors = Author.objects.all()
@@ -68,7 +101,7 @@ def author_delete(request, pk):
     if request.method == 'POST':
         author.delete()
         return redirect('author_list')
-        return render(request, 'app/author_confirm_delete.html', {'author': author})
+    return render(request, 'app/author_confirm_delete.html', {'author': author})
 
 def category_list(request):
     categorys = Category.objects.all()
@@ -101,3 +134,4 @@ def category_delete(request, pk):
         category.delete()
         return redirect('category_list')
     return render(request, 'app/category_confirm_delete.html', {'category': category})
+

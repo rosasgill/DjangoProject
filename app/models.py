@@ -7,6 +7,11 @@ class Item(models.Model):
     def __str__(self):
         return self.name
 
+class Publicado(models.Model):
+    date = models.PositiveIntegerField()
+    mes = models.CharField(max_length=100)
+    ano = models.PositiveIntegerField()
+    description = models.TextField(blank=True)
 
 class Author(models.Model):
     name = models.CharField(max_length=100)

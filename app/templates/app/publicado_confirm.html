@@ -1,0 +1,5 @@
+<h1>Publicado</h1>
+<form method="post">{% csrf_token %}
+    <p>Delete '{{ publicado }}'?</p>
+    <button type="submit">Yes</button><a href="{% url 'publicado_list' %}">
+        Cancel</a></form>
