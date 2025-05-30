@@ -1,6 +1,6 @@
-# TucumaSoft 1.2
+# TucumaSoft 1.3
 
-> **Versão**: 1.2
+> **Versão**: 1.3
 
 ## Descrição
 
@@ -57,7 +57,7 @@ http://127.0.0.1:8000/
 
 ## Versão
 
-- **TucumaSoft**: 1.2
+- **TucumaSoft**: 1.3
 - Registre sua versão a partir dessa.
 
 ## Equipe
