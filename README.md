@@ -1,6 +1,6 @@
-# TucumaSoft 1.3
+# TucumaSoft 1.4
 
-> **Versão**: 1.3
+> **Versão**: 1.4
 
 ## Descrição
 
