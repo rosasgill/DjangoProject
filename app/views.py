@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect, get_object_or_404
-from .models import Item, Category
-from .forms import ItemForm, CategoryForm
+from .models import Item, Author, Category, Publicado
+from .forms import ItemForm, AuthorForm, CategoryForm, PublicadoForm
+
 
 def item_list(request):
     items = Item.objects.all()
@@ -34,48 +35,74 @@ def item_delete(request, pk):
         return redirect('item_list')
     return render(request, 'app/item_confirm_delete.html', {'item': item})
 
-<<<<<<< HEAD
-
-
-
-
-from django.shortcuts import render, redirect, get_object_or_404
-from .models import Publicado
-from .forms import PublicadoForm
-
 
 def publicado_list(request):
-    items = Item.objects.all()
-    return render(request, 'app/publicado_list.html', {'publicado': Publicado})
+    publicados = Publicado.objects.all()
+    return render(request, 'app/publicado_list.html', {'publicados': publicados})
 
 def publicado_create(request):
     if request.method == 'POST':
         form = PublicadoForm(request.POST)
         if form.is_valid():
             form.save()
-            return redirect('item_list')
+            return redirect('publicado_list')
     else:
-        form = Publicado()
-    return render(request, 'app/publicado.html', {'form': form})
+        form = PublicadoForm()
+    return render(request, 'app/publicado_form.html', {'form': form})
+
 
 def publicado_update(request, pk):
-    item = get_object_or_404(Item, pk=pk)
+    publicado = get_object_or_404(Publicado, pk=pk)
     if request.method == 'POST':
-        form = Publicado(request.POST, instance= Publicado)
+        form = PublicadoForm(request.POST, instance=publicado)
         if form.is_valid():
             form.save()
-            return redirect('publicado')
+            return redirect('publicado_list')
     else:
-        form = Publicado(instance=Publicado)
+        form = PublicadoForm(instance=publicado)
     return render(request, 'app/publicado_form.html', {'form': form})
 
 def publicado_delete(request, pk):
-    item = get_object_or_404(Item, pk=pk)
+    publicado = get_object_or_404(Publicado, pk=pk)
     if request.method == 'POST':
-        Publicado.delete()
-        return redirect('publicado')
-    return render(request, 'app/publicado_confirm_delete.html', {'publicado': Publicado})
-=======
+        publicado.delete()
+        return redirect('publicado_list')
+    return render(request, 'app/publicado_confirm.html', {'publicado': publicado})
+
+# Antonio Gabriel
+def author_list(request):
+    authors = Author.objects.all()
+    return render(request, 'app/author_list.html', {'authors': authors})
+
+def author_create(request):
+    if request.method == 'POST':
+        form = AuthorForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('author_list')
+    else:
+        form = AuthorForm()
+    return render(request, 'app/author_form.html', {'form': form})
+    # return render(request, 'app/item_form.html', {'form': form})
+
+def author_update(request, pk):
+    author = get_object_or_404(Author, pk=pk)
+    if request.method == 'POST':
+        form = AuthorForm(request.POST, instance=author)
+        if form.is_valid():
+            form.save()
+            return redirect('author_list')
+    else:
+        form = AuthorForm(instance=author)
+    return render(request, 'app/author_form.html', {'form': form})
+
+def author_delete(request, pk):
+    author = get_object_or_404(Author, pk=pk)
+    if request.method == 'POST':
+        author.delete()
+        return redirect('author_list')
+    return render(request, 'app/author_confirm_delete.html', {'author': author})
+
 def category_list(request):
     categorys = Category.objects.all()
     return render(request, 'app/category_list.html', {'categorys': categorys})
@@ -107,4 +134,4 @@ def category_delete(request, pk):
         category.delete()
         return redirect('category_list')
     return render(request, 'app/category_confirm_delete.html', {'category': category})
->>>>>>> bcd0cac47a898c87bf84cb82db4d004363d84a5b
+
