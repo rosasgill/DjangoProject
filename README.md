@@ -1,4 +1,4 @@
-# TucumaSoft 1.2
+# TucumaSoft 1.3
 
 > **Versão**: 1.3
 
@@ -9,7 +9,7 @@ Projeto Django base para atividade prática do curso de versionemento de código
 ## Pré-requisitos
 
 - Python 3
-- `venv` (já incluso no Python 3)
+- `venv` (Não incluso no Projeto)
 - Django
 
 ## Instalação e Configuração
@@ -57,7 +57,7 @@ http://127.0.0.1:8000/
 
 ## Versão
 
-- **TucumaSoft**: 1.2
+- **TucumaSoft**: 1.3
 - Registre sua versão a partir dessa.
 
 ## Equipe
